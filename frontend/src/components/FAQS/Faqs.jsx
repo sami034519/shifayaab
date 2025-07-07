@@ -48,7 +48,7 @@ const FAQs = () => {
       <div className="max-w-7xl bg-green-50 lg:py-5 mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left Image */}
         <div className="flex-1 rounded-lg">
-          <img src={faqImage} alt="FAQs" className="w-full rounded-lg max-w-md mx-auto" />
+          <img src={faqImage} alt="FAQs" className="w-full rounded-lg max-w-md mx-auto" data-aos='fade-down' />
         </div>
 
         {/* Right Accordion */}

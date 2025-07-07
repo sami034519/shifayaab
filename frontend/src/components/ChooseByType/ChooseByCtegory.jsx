@@ -1,7 +1,7 @@
-// CategoryGrid.js
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 // Image imports
 import icon1 from '../../images/Category_Icon-01.svg';
@@ -19,8 +19,12 @@ import icon12 from '../../images/Category_Icon-12.svg';
 import icon13 from '../../images/Category_Icon-13.svg';
 import icon14 from '../../images/Category_Icon-14.svg';
 
+// Slug helper
+const toSlug = (str) =>
+  str.toLowerCase().replace(/\s+/g, "-").replace(/[&'/]/g, "");
+
 const categories = [
-  { title: "Women's Health", iconSrc: icon1, bgColor: 'bg-pink-100' },
+  { title: "Womens Health", iconSrc: icon1, bgColor: 'bg-pink-100' },
   { title: "Beauty Health", iconSrc: icon2, bgColor: 'bg-rose-100' },
   { title: "Weight Management", iconSrc: icon3, bgColor: 'bg-yellow-100' },
   { title: "Kids Health", iconSrc: icon4, bgColor: 'bg-blue-100' },
@@ -45,7 +49,7 @@ const CategoryGrid = () => {
   }, []);
 
   const handleToggle = () => {
-    setShowAll(prev => {
+    setShowAll((prev) => {
       const next = !prev;
       setTimeout(() => AOS.refresh(), 200); // Refresh AOS after toggle
       return next;
@@ -53,10 +57,10 @@ const CategoryGrid = () => {
   };
 
   return (
-    <div className="py-10 overflow-hidden text-center">
+    <div className="lg:pt-10 overflow-hidden text-center">
       {/* Heading */}
       <div className="w-full flex text-gray-700 justify-center items-center">
-        <div className="py-10 px-4 w-full lg:w-[70%] text-center overflow-hidden">
+        <div className="pt-10 px-4 w-full lg:w-[70%] text-center overflow-hidden">
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="flex-grow border-t border-black" data-aos="fade-left"></div>
             <h2 className="mx-4 text-2xl font-bold whitespace-nowrap" data-aos="fade-down">
@@ -68,9 +72,13 @@ const CategoryGrid = () => {
       </div>
 
       {/* Category Grid */}
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto overflow-hidden">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto overflow-hidden">
         {visibleCategories.map((cat, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <Link
+            to={`/products/${toSlug(cat.title)}`}
+            key={index}
+            className="flex flex-col items-center"
+          >
             <div
               className={`w-28 h-28 rounded-full flex items-center justify-center p-1 cursor-pointer hover:scale-105 transition ${cat.bgColor}`}
               data-aos="fade-down"
@@ -78,14 +86,14 @@ const CategoryGrid = () => {
               <img src={cat.iconSrc} alt={cat.title} className="w-full h-full" />
             </div>
             <p className="mt-2 text-sm font-medium">{cat.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
 
       {/* Toggle Button */}
       <div className="mt-12">
         <button
-          className="px-12 py-2 bg-herbal text-white hover:bg-green-500 transition"
+          className="px-12 py-2 bg-herbal rounded text-white hover:bg-green-500 transition"
           onClick={handleToggle}
           data-aos="fade-down"
         >

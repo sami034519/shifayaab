@@ -5,7 +5,7 @@ import Benifits from '../Benifits/Benifits'
 import Delivey from '../Benifits/Delivey'
 import ReviewSlider from '../Clients/Clients'
 import FAQs from '../FAQS/Faqs'
-import ContactUs from '../CONTACTus/Contactus'
+
 function Home() {
   return (
     <>
@@ -15,7 +15,7 @@ function Home() {
     <Delivey/>
     <ReviewSlider/>
     <FAQs/>
-    <ContactUs/>
+    
     </>
   )
 }

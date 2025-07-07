@@ -8,13 +8,13 @@ import useIsMobile from './Useismobile';
 
 // Image imports
 import slider11 from '../../images/Banner-4.jpg';
-import slider12 from '../../images/diafixbannermob.png';
+import slider12 from '../../images/diafixmobile.jpg';
 import slider21 from '../../images/Banner-1.jpg';
-import slider22 from '../../images/uricaremob.png';
+import slider22 from '../../images/uricare mobile.jpg';
 import slider31 from '../../images/Banner-2.jpg';
-import slider32 from '../../images/slimfitmob.png';
+import slider32 from '../../images/slimmobile.jpg';
 import slider41 from '../../images/Banner-3.jpg';
-import slider42 from '../../images/herbalancemob.png';
+import slider42 from '../../images/herbalancemobile.jpg';
 
 const slides = [
   { desktopImage: slider11, mobileImage: slider12, alt: 'Banner 1' },
@@ -45,7 +45,7 @@ const ImageCarousel = () => {
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>
-            <div className="relative overflow-hidden overflow-hidden h-[80vh] md:h-[70vh] lg:h-[90vh]">
+            <div className="relative  overflow-hidden h-[80vh] md:h-[70vh] lg:h-[90vh]">
               <img
                 src={isMobile ? slide.mobileImage : slide.desktopImage}
                 alt={slide.alt}
