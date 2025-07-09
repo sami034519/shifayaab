@@ -13,7 +13,7 @@ import {
   FaPhone,
   FaChevronDown,
 } from "react-icons/fa";
-import logo from "../../images/shifalogo.png";
+import logo from "../../images/shifayablogo.jpg";
 import { removeFromCart } from "../redux/Cartslice";
 import Herolslider from "../heroslider/Herolsider";
 import { products } from "../products/Products";
@@ -146,7 +146,7 @@ const Header = () => {
               onMouseLeave={() => setProductDropdownOpen(false)}
             >
               <span className="pb-1 text-gray-500 hover:text-herbal cursor-pointer border-b-2 border-transparent hover:border-herbal">
-                All Products ▾
+                ByCategory ▾
               </span>
               {productDropdownOpen && (
                 <div className="absolute top-6 left-0 bg-white shadow-md rounded-md mt-2 z-50 w-72 grid grid-cols-2 gap-3 p-4">
@@ -193,6 +193,18 @@ const Header = () => {
               }
             >
               Contact Us
+            </NavLink>
+             <NavLink
+              to="/allproducts"
+              className={({ isActive }) =>
+                `pb-1 transition-all ${
+                  isActive
+                    ? "text-herbal border-b-2 border-herbal"
+                    : "text-gray-500 hover:text-herbal hover:border-b-2 border-transparent"
+                }`
+              }
+            >
+              All Products
             </NavLink>
           </nav>
 

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
        colors: {
-        herbal: "#70cc89",
+        herbal: "#144525",
          diafixbg:'#043f64',
          herbalancebg:'#5d0f41',
          slimfitbg:'#59612e',
