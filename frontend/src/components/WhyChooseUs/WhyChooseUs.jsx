@@ -1,10 +1,10 @@
-import React, { useState,useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const WhyChooseUs = () => {
   useEffect(() => {
-      AOS.init({ duration: 1000, once: false });
-    }, []);
+    AOS.init({ duration: 1000, once: false });
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -12,24 +12,37 @@ const WhyChooseUs = () => {
   return (
     <section className="w-full  py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto text-center">
-       <div className="flex items-center overflow-hidden justify-center gap-2 mb-3 lg:mb-6">
-            <div className="flex-grow border-t border-black" data-aos="fade-left"></div>
-            <h2 className="mx-4 text-2xl font-bold text-gray-700 whitespace-nowrap" data-aos="fade-down">
-             WHY CHOOSE SHIFAYAAB
-            </h2>
-            <div className="flex-grow border-t border-black" data-aos="fade-right"></div>
-          </div>
-          <div className='w-full flex justify-center overflow-hidden'>
-        <p className=" lg:text-lg text-base text-gray-500 w-[90%] lg:w-[60%] mb-3 lg:mb-12" data-aos="fade-left">
-          Experience the healing power of nature with our 100% natural products. We are committed to purity, quality, and customer well-being.
-        </p>
+        <div className="flex items-center overflow-hidden justify-center gap-2 mb-3 lg:mb-6">
+          <div
+            className="flex-grow border-t border-black"
+            data-aos="fade-left"
+          ></div>
+          <h2
+            className="mx-4 text-2xl font-bold text-gray-700 whitespace-nowrap"
+            data-aos="fade-down"
+          >
+            WHY CHOOSE SHIFAYAAB
+          </h2>
+          <div
+            className="flex-grow border-t border-black"
+            data-aos="fade-right"
+          ></div>
+        </div>
+        <div className="w-full flex justify-center overflow-hidden">
+          <p
+            className=" lg:text-lg text-base text-gray-500 w-[90%] lg:w-[60%] mb-3 lg:mb-12"
+            data-aos="fade-left"
+          >
+            Experience the healing power of nature with our 100% natural
+            products. We are committed to purity, quality, and customer
+            well-being.
+          </p>
         </div>
 
         {/* Thumbnail Preview */}
         <div
           onClick={openModal}
           className="relative cursor-pointer max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition duration-300"
-          
         >
           {/* Replace with actual image or use poster frame later */}
           <img
@@ -42,7 +55,12 @@ const WhyChooseUs = () => {
           {/* Play Icon Overlay */}
           <div className="absolute inset-0 flex items-center  justify-center bg-black bg-opacity-40">
             <div className="bg-white text-herbal rounded-full  p-4 shadow-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
                 <path d="M6.5 5.5v9l7-4.5-7-4.5z" />
               </svg>
             </div>
@@ -67,15 +85,16 @@ const WhyChooseUs = () => {
               </button>
 
               {/* Video Player */}
-              <video
-                className="w-full h-auto"
-                controls
-                autoPlay
-                muted
-              >
-                <source src="/videos/ShifaaAd1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="w-full h-[500px]">
+  <iframe
+    className="w-full h-full"
+    src="https://www.youtube.com/embed/9fQ3nzQgpNI?autoplay=1&mute=1"
+    title="Why Choose Shifayaab"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
             </div>
           </div>
         )}
